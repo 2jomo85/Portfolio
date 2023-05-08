@@ -9,23 +9,32 @@ const inter = Inter({ subsets: ["latin"] });
 export default function Project({ projects }) {
   return (
     <Layout>
-      <Head>
-        <title>Jomo Portfolio</title>
-        <meta name="description" content="jomo portfolio" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <h2>총 프로젝트: {projects.results.length}</h2>
+      <div className="flex flex-col items-center justify-center min-h-screen px-3 mb-10">
+        <Head>
+          <title>Jomo Portfolio</title>
+          <meta name="description" content="jomo portfolio" />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <link rel="icon" href="/favicon.ico" />
+        </Head>
+        <h1 className="text-4xl font-bold sm:text-6xl">
+          총 프로젝트 :
+          <span className="pl-4 text-blue-500">{projects.results.length}</span>
+        </h1>
 
-      {projects.results.map((prj, index) => (
-        <ProjectItem key={prj.id} data={prj} />
-      ))}
+        <div className="grid grid-cols-1 gap-8 p-12 m-4 md:grid-cols-2">
+          {projects.results.map((prj, index) => (
+            <ProjectItem key={prj.id} data={prj} />
+          ))}
+        </div>
+      </div>
     </Layout>
   );
 }
 
 // 빌드 타임에 호출
-export async function getStaticProps(context) {
+//export async function getStaticProps(context) {
+// 각 요청 때마다 호출
+export async function getServerSideProps() {
   const options = {
     method: "POST",
     headers: {
