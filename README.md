@@ -75,3 +75,4 @@
       - [Lottie Animation](https://lottiefiles.com/)
       - [Notion api integration](https://developers.notion.com/docs/create-a-notion-integration)
       - [Vercel deploy](https://vercel.com/docs/concepts/deployments/overview)
+      - [heroicons](https://heroicons.com/)
