@@ -1,5 +1,9 @@
 # Next.js 포트폴리오 만들기
 
+## 완성사이트
+
+> [포트폴리오](https://portfolio-2jomo85.vercel.app/)
+
 ## 1. 개발환경
 
 1. [VSCode]("https://code.visualstudio.com/") 설치
@@ -64,4 +68,10 @@
       ```bash
       yarn add react-lottie-player
       ```
-   7.
+   7. 참조사이트
+      - [Next.js](https://nextjs.org/)
+      - [Tailwind CSS](https://tailwindcss.com/)
+      - [Tailblocks](https://tailblocks.cc/)
+      - [Lottie Animation](https://lottiefiles.com/)
+      - [Notion api integration](https://developers.notion.com/docs/create-a-notion-integration)
+      - [Vercel deploy](https://vercel.com/docs/concepts/deployments/overview)
