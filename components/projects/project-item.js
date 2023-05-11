@@ -1,4 +1,5 @@
 import Image from "next/legacy/image";
+import Icon from "../icons/icon";
 
 export default function ProjectItem({ data }) {
   const title = data.properties.Name.title[0].plain_text;
@@ -54,6 +55,7 @@ export default function ProjectItem({ data }) {
           {tags.map(t => (
             <h1
               className="px-2 py-1 mr-2 rounded-md bg-sky-200 dark:bg-sky-700 w-30"
+              //className={`px-2 py-1 mr-2 rounded-md bg-${t.color}-200 dark:bg-${t.color}-700 w-30`}
               key={t.id}
             >
               {t.name}
