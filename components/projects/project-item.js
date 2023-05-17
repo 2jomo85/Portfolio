@@ -1,5 +1,4 @@
 import Image from "next/legacy/image";
-import Icon from "../icons/icon";
 
 export default function ProjectItem({ data }) {
   const title = data.properties.Name.title[0].plain_text;
