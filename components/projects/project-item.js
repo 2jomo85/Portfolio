@@ -2,10 +2,12 @@ import Image from "next/legacy/image";
 
 export default function ProjectItem({ data }) {
   const title = data.properties.Name.title[0].plain_text;
-  const github = data.properties.Github.url ? data.properties.Github.url : "";
+  const github = data.properties.link.url ? data.properties.link.url : "";
   const description = data.properties.Description.rich_text[0].plain_text;
-  const imgSrc = data.cover.file?.url || data.cover.external.url;
-  const tags = data.properties.Tag.multi_select;
+  const imgSrc = !data.cover
+    ? "https://img.freepik.com/free-vector/illustration-of-magnifying-glass-icon_53876-5613.jpg?w=826&t=st=1686107894~exp=1686108494~hmac=486aa2a934875a1917c5d5daff3b85e5e6e7398c7ec4be9bde770d7bef33b67b"
+    : data.cover.file?.url || data.cover.external.url;
+  const skills = data.properties.Skill.multi_select;
   const start = data.properties.WorkPeriod.date.start;
   const end = data.properties.WorkPeriod.date.end;
 
@@ -30,6 +32,11 @@ export default function ProjectItem({ data }) {
     return result;
   };
 
+  function imageError(e) {
+    e.target.src =
+      "https://img.freepik.com/free-vector/illustration-of-magnifying-glass-icon_53876-5613.jpg?w=826&t=st=1686107894~exp=1686108494~hmac=486aa2a934875a1917c5d5daff3b85e5e6e7398c7ec4be9bde770d7bef33b67b";
+  }
+
   return (
     <div className="project-card ">
       <Image
@@ -41,6 +48,7 @@ export default function ProjectItem({ data }) {
         layout="responsive"
         objectFit="cover"
         quality={100}
+        onError={imageError}
       />
       <div className="p-4 flex flex-col">
         <h1 className="text-2xl font-bold">{title}</h1>
@@ -51,7 +59,7 @@ export default function ProjectItem({ data }) {
           작업기간 : {start} ~ {end} ({calculatedPeriod(start, end)}일)
         </p>
         <div className="flex items-start mt-2">
-          {tags.map(t => (
+          {skills.map(t => (
             <h1
               className="px-2 py-1 mr-2 rounded-md bg-sky-200 dark:bg-sky-700 w-30"
               //className={`px-2 py-1 mr-2 rounded-md bg-${t.color}-200 dark:bg-${t.color}-700 w-30`}

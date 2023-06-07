@@ -23,13 +23,16 @@ export default function Hero() {
           {workYearPeriod}년 차, 오늘도 빡!코딩 중인 개발자 입니다.
         </h2>
         <p className="mb-8 leading-relaxed">
-          {workYearPeriod}년 차 개발자로 MES, ERP 프로젝트를
-          개발/운영하였습니다. 주로 생산, 품질 개발을 담당했으며 필요에 따라
-          설비, 금형, 물류 등 다른 모듈의 개발도 겸하였습니다. 처음이라
-          서툴었지만 회사의 framework의 버전업 프로젝트에 참여했던 경험이
-          있습니다.
+          {workYearPeriod}년 차 개발자로 SI, 제조품질경영관리(QMS),
+          제조공정관리(MES, POP), 통계적공정관리(SPC), 전사적자원관리(ERP) 분야
+          컨설팅 및 시스템 개발 / 운영하였습니다.
           <br />
-          새로운 언어에 흥미를 가지고 배우는 것을 좋아합니다.
+          <br />
+          새로운 언어에 흥미를 가지고 배우는 것을 좋아하며,
+          <br />
+          어제보다 더 나은 개발자가 되고 싶은 마음가짐으로 학습하는 것을 생활화
+          하고 있습니다.
+          <br />
         </p>
         <div className="flex justify-center">
           <Link href="/projects">
